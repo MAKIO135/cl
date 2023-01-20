@@ -157,13 +157,13 @@ const resetFilters = _ => {
 
 const gui = new ControlKit()
 gui.addPanel({label: 'Filter'})
-    .addStringInput(filtersProxy, 'paragraphs', {
-        label: 'Paragraphs',
-        presets: ['All', 1, 2, 3, 4, 5, 6, 7, 8],
-    })
     .addStringInput(filtersProxy, 'style', {
         label: 'Style',
         presets: ['All', 'Architecture', 'Graffiti'],
+    })
+    .addStringInput(filtersProxy, 'paragraphs', {
+        label: 'Paragraphs',
+        presets: ['All', 1, 2, 3, 4, 5, 6, 7, 8],
     })
     .addStringInput(filtersProxy, 'squareFormat', {
         label: 'Square Format',
