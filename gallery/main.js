@@ -60,7 +60,7 @@ function calculateFeatures(hash) {
         'Cuts': cuts,
         'Spacing': spacing,
         'Curvyness': curvyness === 0 ? 0 : 1/curvyness,
-        'Palette': ['Zeda', 'Peck', 'Coast', 'Went', 'Rezist', 'Seen', 'JayOne', 'Swift', 'Jace', 'Spek', 'Trole', 'Sane', 'Aem', 'Keroz', 'Dose', 'Skrew', 'Xone', 'Rezo', 'Werl', 'Spark', 'Colorz', 'Revolt', 'Senz', 'Mkue', 'Cope2', 'Mire', 'Kadism', 'Omick', 'Lost', 'Gris', 'Sonick', 'Oxyd', 'Jazy', 'Smoker', 'Anchor', 'Nesta', 'Perl', 'Drane', 'Ogre', 'Dash', 'Risk', 'Siao', 'Bonus', 'Ahero', 'Violon', 'Menu', 'Oclock', 'Wovoka', 'Brusk', 'Lobe', 'Strem', 'Ozey', 'Guess', 'Spei', 'Duke'][paletteId],
+        'Palette': paletteId,
         'Complementary Color': ['Red','Deep Pink','Yellow','DodgerBlue','Purple'][complementaryColor],
     }
 };
