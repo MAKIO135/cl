@@ -59,7 +59,7 @@ function calculateFeatures(hash) {
         'Zoom': scaling,
         'Cuts': cuts,
         'Spacing': spacing,
-        'Curvyness': curvyness === 0 ? 0 : 1/curvyness,
+        'Curvyness': curvyness === 0 ? 0 : (1-curvyness)/0.25,
         'Palette': paletteId,
         'Complementary Color': ['Red','Deep Pink','Yellow','DodgerBlue','Purple'][complementaryColor],
     }
