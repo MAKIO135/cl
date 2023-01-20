@@ -59,7 +59,7 @@ function calculateFeatures(hash) {
         'Zoom': scaling,
         'Cuts': cuts,
         'Spacing': spacing,
-        'Curvyness': curvyness/0.25,
+        'Curves': curvyness/0.25,
         'Palette': paletteId,
         'Complementary Color': ['Red','Deep Pink','Yellow','DodgerBlue','Purple'][complementaryColor],
     }
@@ -148,7 +148,7 @@ const resetFilters = _ => {
     filters.zoom = 'All'
     filters.cuts = 'All'
     filters.spacing = 'All'
-    filters.curvyness = 'All'
+    filters.curves = 'All'
     filters.palett = 0
     filters.complementaryColor = 'All'
     
@@ -185,8 +185,8 @@ gui.addPanel({label: 'Filter'})
         label: 'Spacing',
         presets: ['All', 'Extra-thin', 'Thin', 'Normal', 'Large'],
     })
-    .addStringInput(filtersProxy, 'curvyness', {
-        label: 'Curvyness',
+    .addStringInput(filtersProxy, 'curves', {
+        label: 'Curves',
         presets: ['All', 0, 1, 2, 3, 4],
     })
     .addNumberInput(filtersProxy, 'palette', {
