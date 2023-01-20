@@ -91,7 +91,8 @@ document.querySelector('.container').innerHTML = hashes.map((hash,i) => {
         html: `<div class="box" ${dataset}><img src="images/${hash}.png" title="${title}" loading="lazy"></div>`
     }
 })
-.sort((a, b) => a.paletteId - b.paletteId)
+// .sort((a, b) => a.paletteId - b.paletteId)
+.sort((a, b) => 1 - Math.random()*2)
 .map(d => d.html).join('')
 
 
