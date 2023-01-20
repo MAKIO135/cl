@@ -71,13 +71,10 @@ document.addEventListener('DOMContentLoaded', e => document.querySelectorAll('im
 }))
 
 document.querySelector('.container').innerHTML = hashes.map((hash,i) => {
-    console.log(hash)
     const features = calculateFeatures(hash)
     const paletteId = features['Palette']
     let title = [`Concrete Letters #${i}`]
-    let dataset = [
-        // `data-hash="${hash}"`
-    ]
+    let dataset = []
     for(let key in features) {
         if(key === 'Palette') title.push(`Palette: ${["Zeda","Bafe","Ink","Peck","Coast","Sabske","Went","JayOne","Rezist","Tempt","Chaka","Seen","Tlok","Felon","Swift","Spin","Drastic","Spek","Strem","Jace","Reyes","Sane","Aem","Ander","Dose","Keroz","Skrew","Xone","Guer","Rezo","Werl","Colorz","Spark","Sebl","Kavee","Revolt","Senz","Mkue","Cope2","Mire","Kadism","Omick","Lost","Gris","Sonick","Oxyd","Jazy","Smoker","Anchor","Kadster","Nesta","Trixter","Perl","Drane","Retna","Ogre","Seyce","Dash","Siao","Risk","Bonus","Reaker","Krave","Dear","Mask","Mencer","Pear","Sacer","Ahero","Violon","Junior161","Afroe","Shaken","Abra","Menu","Oclock","Aves","Saet","Rone","Trole","Wovoka","Zephyr","Ozey","Greyer","Brusk","Lobe","Style","Auger","Guess","Spei","Duke"][paletteId]}`)
         else title.push(`${key}: ${features[key]}`)
