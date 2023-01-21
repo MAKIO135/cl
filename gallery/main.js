@@ -110,7 +110,7 @@ const filters = {
     zoom: 'All',
     cuts: 'All',
     spacing: 'All',
-    curvyness: 'All',
+    curves: 'All',
     palette: 0,
     complementaryColor: 'All',
 }
@@ -149,7 +149,7 @@ const resetFilters = _ => {
     filters.cuts = 'All'
     filters.spacing = 'All'
     filters.curves = 'All'
-    filters.palett = 0
+    filters.palette = 0
     filters.complementaryColor = 'All'
     
     imgs.forEach(img => img.style.display = '')
