@@ -125,7 +125,7 @@ const filtersProxy = new Proxy(filters, {
     }
 })
 
-const updateFilters = (key, value) => {
+const updateFilters = _ => {
     let keys = Object.keys(filters).filter(k => k !== 'palette' && filters[k] !== 'All')
     if(filters.palette !== 0) keys.push('palette')
     // console.log(keys)
