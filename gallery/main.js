@@ -197,7 +197,7 @@ gui.addPanel({label: 'Filter'})
         label: 'Complementary Color',
         presets: ['All', 'Red','Deep Pink','Yellow','DodgerBlue','Purple'],
     })
-    .addButton('Reset Filters', resetFilters)
+    // .addButton('Reset Filters', resetFilters)
 
 document.querySelector('#controlKit').style.position = 'fixed'
 document.querySelector('#controlKit>.panel').style.width = '250px'
