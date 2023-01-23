@@ -59,7 +59,7 @@ function calculateFeatures(hash) {
         'Zoom': scaling,
         'Cuts': cuts,
         'Spacing': spacing,
-        'Curvyness': curvyness/0.25,
+        'Curves': curvyness/0.25,
         'Palette': paletteId,
         'Complementary Color': ['Red','Deep Pink','Yellow','DodgerBlue','Purple'][complementaryColor],
     }
@@ -110,7 +110,7 @@ const filters = {
     zoom: 'All',
     cuts: 'All',
     spacing: 'All',
-    curvyness: 'All',
+    curves: 'All',
     palette: 0,
     complementaryColor: 'All',
 }
@@ -125,7 +125,7 @@ const filtersProxy = new Proxy(filters, {
     }
 })
 
-const updateFilters = (key, value) => {
+const updateFilters = _ => {
     let keys = Object.keys(filters).filter(k => k !== 'palette' && filters[k] !== 'All')
     if(filters.palette !== 0) keys.push('palette')
     // console.log(keys)
@@ -148,8 +148,8 @@ const resetFilters = _ => {
     filters.zoom = 'All'
     filters.cuts = 'All'
     filters.spacing = 'All'
-    filters.curvyness = 'All'
-    filters.palett = 0
+    filters.curves = 'All'
+    filters.palette = 0
     filters.complementaryColor = 'All'
     
     imgs.forEach(img => img.style.display = '')
@@ -157,13 +157,13 @@ const resetFilters = _ => {
 
 const gui = new ControlKit()
 gui.addPanel({label: 'Filter'})
-    .addStringInput(filtersProxy, 'paragraphs', {
-        label: 'Paragraphs',
-        presets: ['All', 1, 2, 3, 4, 5, 6, 7, 8],
-    })
     .addStringInput(filtersProxy, 'style', {
         label: 'Style',
         presets: ['All', 'Architecture', 'Graffiti'],
+    })
+    .addStringInput(filtersProxy, 'paragraphs', {
+        label: 'Paragraphs',
+        presets: ['All', 1, 2, 3, 4, 5, 6, 7, 8],
     })
     .addStringInput(filtersProxy, 'squareFormat', {
         label: 'Square Format',
@@ -185,8 +185,8 @@ gui.addPanel({label: 'Filter'})
         label: 'Spacing',
         presets: ['All', 'Extra-thin', 'Thin', 'Normal', 'Large'],
     })
-    .addStringInput(filtersProxy, 'curvyness', {
-        label: 'Curvyness',
+    .addStringInput(filtersProxy, 'curves', {
+        label: 'Curves',
         presets: ['All', 0, 1, 2, 3, 4],
     })
     .addNumberInput(filtersProxy, 'palette', {
@@ -197,7 +197,7 @@ gui.addPanel({label: 'Filter'})
         label: 'Complementary Color',
         presets: ['All', 'Red','Deep Pink','Yellow','DodgerBlue','Purple'],
     })
-    .addButton('Reset Filters', resetFilters)
+    // .addButton('Reset Filters', resetFilters)
 
 document.querySelector('#controlKit').style.position = 'fixed'
 document.querySelector('#controlKit>.panel').style.width = '250px'
